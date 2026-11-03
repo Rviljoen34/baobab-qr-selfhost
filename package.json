@@ -1,0 +1,22 @@
+{
+  "name": "baobab-qr-selfhost",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Keep the QR codes on your own domain working without Baobab QR: a tiny Cloudflare Worker and an importer for the codes export.",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "import": "node src/import.ts",
+    "start": "wrangler dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "~6.0.3",
+    "vitest": "~4.1.12",
+    "wrangler": "^4.155.0"
+  }
+}

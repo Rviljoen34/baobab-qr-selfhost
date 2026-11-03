@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // The Worker's name in your Cloudflare account.
+  "name": "qr-codes",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-28",
+  // Your domain, exactly as it's printed on your codes (README.md, step 5). Cloudflare points it at this Worker and
+  // gives it a certificate.
+  "routes": [{ "pattern": "qr.yourbusiness.com", "custom_domain": true }],
+  // Your codes. `wrangler kv namespace create` puts your namespace's id here (README.md, step 4).
+  "kv_namespaces": [{ "binding": "CODES", "id": "paste-your-namespace-id-here" }],
+  // Your codes answer on your domain only, not on a workers.dev address.
+  "workers_dev": false,
+  "preview_urls": false,
+  // No logs: they would record the IP address of everyone who scans a code.
+  "observability": { "enabled": false },
+}

@@ -1,0 +1,7 @@
+node_modules/
+.wrangler/
+
+# Your codes: the export and the importer's file stay on your computer.
+*.csv
+codes*.json
+one.json
